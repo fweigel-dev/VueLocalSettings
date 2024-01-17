@@ -11,7 +11,7 @@ export default {
       required: true,
     },
     selectedValue: {
-      type: [String, Array],
+      type: [String, Array, Number],
       required: true,
     },
     updateEvent: {
