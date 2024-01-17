@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     resetToDefault() {
-      let newValue = this.config.default;
+      let newValue = Array.isArray(this.config.default) ? [...this.config.default] : this.config.default;
       this.updateEvent(newValue);
     },
   },
