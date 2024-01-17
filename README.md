@@ -1,7 +1,31 @@
-# Vue 3 + Vite
+# VueLocalSettings
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project is a Vue.js application that provides a dynamic settings page used for storing user preferences in the
+local storage. The settings page is built based on a configuration object, allowing for a high degree of customization
+and flexibility.
 
-## Recommended IDE Setup
+## Features:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Dynamic Settings Page: The settings page is built dynamically based on a configuration object. This allows for a high
+  degree of customization and flexibility in the settings that can be displayed and how they are organized.
+- Various Setting Types: The application supports various types of settings including single select options, multiple
+  select options and percentage sliders.
+- Reset to Default: Each setting comes with a "Reset to Default" button, allowing users to easily revert their changes.
+- Local Storage: User's settings are saved in the local storage, allowing for persistence across sessions.
+
+## Setup:
+
+To run this project, you will need to have Node.js and npm installed. Once these are installed, you can clone the
+repository and install the dependencies using npm:
+
+```bash
+git clone https://github.com/Ferox-Stylo/VueLocalSettings.git
+cd VueLocalSettings
+npm install
+```
+
+To start the dev server run:
+
+```bash
+npm run dev
+```
