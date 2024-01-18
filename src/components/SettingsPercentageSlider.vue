@@ -29,10 +29,6 @@ export default {
       type: Object,
       required: true,
     },
-    selected: {
-      type: Number,
-      default: 0
-    },
     keyName: {
       type: String,
       required: true,
@@ -40,8 +36,17 @@ export default {
   },
   data() {
     return {
-      selectedValue: this.selected || this.config.selected
+      selectedValue: this.config.selected,
     };
+  },
+  created() {
+    const savedSelected = localStorage.getItem('userSettings');
+    if (savedSelected) {
+      const userSettings = JSON.parse(savedSelected);
+      this.selectedValue = userSettings[this.keyName] || this.config.selected;
+    } else {
+      this.selectedValue = this.config.selected;
+    }
   },
   methods: {
     emitChange() {
@@ -52,10 +57,5 @@ export default {
       this.$emit('update', {value: this.selectedValue});
     },
   },
-  watch: {
-    selected(newValue) {
-      this.selectedValue = newValue;
-    },
-  }
 };
 </script>
