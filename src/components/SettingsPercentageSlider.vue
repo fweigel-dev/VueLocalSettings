@@ -20,10 +20,12 @@
 
 <script>
 import SettingsResetButton from "./SettingsResetButton.vue";
+import settingsMixin from "../mixins/settingsMixin.js";
 
 export default {
   name: "SettingsPercentageSliderComponent",
   components: {SettingsResetButton},
+  mixins: [settingsMixin],
   props: {
     config: {
       type: Object,
@@ -34,26 +36,8 @@ export default {
       required: true,
     }
   },
-  data() {
-    return {
-      selectedValue: this.config.selected,
-    };
-  },
-  created() {
-    const savedSelected = localStorage.getItem('userSettings');
-    if (savedSelected) {
-      const userSettings = JSON.parse(savedSelected);
-      this.selectedValue = userSettings[this.keyName] || this.config.selected;
-    } else {
-      this.selectedValue = this.config.selected;
-    }
-  },
   methods: {
     emitChange() {
-      this.$emit('update', {value: this.selectedValue});
-    },
-    updateValue(newValue) {
-      this.selectedValue = newValue;
       this.$emit('update', {value: this.selectedValue});
     },
   },
