@@ -19,10 +19,12 @@
 
 <script>
 import SettingsResetButton from "./SettingsResetButton.vue";
+import settingsMixin from "../mixins/settingsMixin.js";
 
 export default {
   name: "SettingsSelectMultiple",
   components: {SettingsResetButton},
+  mixins: [settingsMixin],
   props: {
     config: {
       type: Object,
@@ -33,20 +35,6 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      selectedValue: [],
-    };
-  },
-  created() {
-    const savedSelected = localStorage.getItem('userSettings');
-    if (savedSelected) {
-      const userSettings = JSON.parse(savedSelected);
-      this.selectedValue = userSettings[this.keyName] || this.config.selected;
-    } else {
-      this.selectedValue = this.config.selected;
-    }
-  },
   methods: {
     toggleSelection(value) {
       const index = this.selectedValue.indexOf(value);
@@ -55,10 +43,6 @@ export default {
       } else {
         this.selectedValue.push(value);
       }
-      this.$emit('update', {value: this.selectedValue});
-    },
-    updateValue(newValue) {
-      this.selectedValue = newValue;
       this.$emit('update', {value: this.selectedValue});
     },
   },

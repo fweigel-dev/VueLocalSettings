@@ -19,10 +19,12 @@
 
 <script>
 import SettingsResetButton from "./SettingsResetButton.vue";
+import settingsMixin from "../mixins/settingsMixin.js";
 
 export default {
   name: "SettingsSelectOne",
   components: {SettingsResetButton},
+  mixins: [settingsMixin],
   props: {
     config: {
       type: Object,
@@ -33,27 +35,9 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      selectedValue: null,
-    };
-  },
-  created() {
-    const savedSelected = localStorage.getItem('userSettings');
-    if (savedSelected) {
-      const userSettings = JSON.parse(savedSelected);
-      this.selectedValue = userSettings[this.keyName] || this.config.selected;
-    } else {
-      this.selectedValue = this.config.selected;
-    }
-  },
   methods: {
     selectOption(value) {
       this.selectedValue = value;
-      this.$emit('update', {value: this.selectedValue});
-    },
-    updateValue(newValue) {
-      this.selectedValue = newValue;
       this.$emit('update', {value: this.selectedValue});
     },
   },
