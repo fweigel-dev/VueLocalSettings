@@ -17,6 +17,7 @@ import SettingsSelectMultiple from './SettingsSelectMultiple.vue';
 import SettingsSelectNone from './SettingsSelectNone.vue';
 import SettingsSectionHeader from "./SettingsSectionHeader.vue";
 import SettingsPercentageSlider from './SettingsPercentageSlider.vue';
+import SettingsColorPicker from "./SettingsColorPicker.vue";
 
 export default {
   name: "SettingsPageComponent",
@@ -26,6 +27,7 @@ export default {
     SettingsSelectNone,
     SettingsSectionHeader,
     SettingsPercentageSlider,
+    SettingsColorPicker,
   },
   props: {
     config: {
@@ -50,6 +52,7 @@ export default {
         'no-settings': 'SettingsSelectNone',
         'section-header': 'SettingsSectionHeader',
         'percentage-slider': 'SettingsPercentageSlider',
+        'color-picker': 'SettingsColorPicker',
       };
       return componentMap[type] || 'div';
     },
