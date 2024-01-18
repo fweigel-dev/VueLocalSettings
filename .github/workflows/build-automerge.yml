@@ -1,0 +1,36 @@
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  automerge:
+    name: Auto-Approve and Merge Dependabot PRs
+    runs-on: ubuntu-latest
+
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: "[Setup] Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "[Setup] Collect dependabot metadata"
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v1.6.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "[Act] Enable auto-merge"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --auto --squash "$PR_URL"
+
+      - name: "[Act] Approve a PR"
+        if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr review --approve "$PR_URL"
