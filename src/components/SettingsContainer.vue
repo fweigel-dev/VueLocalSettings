@@ -100,6 +100,13 @@ export default {
             "title": "Percentage Slider",
             "description": "Adjust the percentage level."
           },
+          "color-picker-1": {
+            "type": "color-picker",
+            "default": "#000000",
+            "selected": "#000000",
+            "title": "Color Picker",
+            "description": "Select a color.",
+          },
         }
       }
     };
