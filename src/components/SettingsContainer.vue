@@ -15,97 +15,88 @@ export default {
       config: {
         "version": "1.0.0",
         "settings": {
-          "header-1": {
+          "header-color": {
             "type": "section-header",
-            "title": "Header",
-            "description": "This is a header section",
+            "title": "Color Settings",
+            "description": "Choose the colors for your app.",
           },
-          "select-one-1": {
-            "type": "select-one",
-            "default": "first",
-            "selected": "first",
-            "title": "Select One",
-            "description": "You can only select one of the following options.",
-            "values": [
-              {
-                "title": "First",
-                "value": "first"
-              },
-              {
-                "title": "Second",
-                "value": "second"
-              }
-            ]
-          },
-          "no-setting-1": {
+          "no-setting-color": {
             "type": "no-settings",
-            "title": "No Settings",
-            "description": "This is used if you want to display a section without any settings.",
+            "title": "",
+            "description": "This settings section focuses on colors. You can choose the colors for the background and the statistic items.",
           },
-          "select-one-2": {
-            "type": "select-one",
-            "default": "second",
-            "selected": "second",
-            "title": "Select One",
-            "description": "You can only select one of the following options.",
-            "values": [
-              {
-                "title": "First",
-                "value": "first"
-              },
-              {
-                "title": "Second",
-                "value": "second"
-              },
-              {
-                "title": "Third",
-                "value": "third"
-              }
-            ]
-          },
-          "select-multiple-1": {
-            "type": "select-multiple",
-            "default": ["first", "second"],
-            "selected": ["first", "second"],
-            "title": "Select Multiple",
-            "description": "You can select multiple of the following options.",
-            "values": [
-              {
-                "title": "First",
-                "value": "first"
-              },
-              {
-                "title": "Second",
-                "value": "second"
-              },
-              {
-                "title": "Third",
-                "value": "third"
-              }
-
-            ]
-          },
-          "percentage-slider-1": {
-            "type": "percentage-slider",
-            "default": 0,
-            "selected": 0,
-            "title": "Percentage Slider",
-            "description": "Adjust the percentage level."
-          }
-          ,
-          "percentage-slider-2": {
-            "type": "percentage-slider",
-            "default": 25,
-            "selected": 25,
-            "title": "Percentage Slider",
-            "description": "Adjust the percentage level."
-          },
-          "color-picker-1": {
+          "color-picker-background": {
             "type": "color-picker",
-            "default": "#000000",
+            "default": "#232323",
             "selected": "#000000",
-            "title": "Color Picker",
-            "description": "Select a color.",
+            "title": "Background Color",
+            "description": "Select the color for the background.",
+          },
+          "color-picker-statistic-item": {
+            "type": "color-picker",
+            "default": "#3a3a3a",
+            "selected": "#000000",
+            "title": "Statistic Item Color",
+            "description": "Select the color for the statistic items.",
+          },
+          "header-items": {
+            "type": "section-header",
+            "title": "Item Settings",
+            "description": "Settings for the statistic items.",
+          },
+          "no-setting-items": {
+            "type": "no-settings",
+            "title": "",
+            "description": "This settings section focuses on the statistic items. You can toggle the items you want to see and select the unit you want to use.",
+          },
+          "toggle-items": {
+            "type": "select-multiple",
+            "default": ["total-shipments", "daily-sales", "completed-tasks"],
+            "selected": ["total-shipments", "daily-sales", "completed-tasks"],
+            "title": "Toggle Items",
+            "description": "Toggle the items you want to see.",
+            "values": [
+              {
+                "title": "Total Shipments",
+                "value": "total-shipments"
+              },
+              {
+                "title": "Daily Sales",
+                "value": "daily-sales"
+              },
+              {
+                "title": "Completed Tasks",
+                "value": "completed-tasks"
+              }
+            ]
+          },
+          "select-unit": {
+            "type": "select-one",
+            "default": "exact",
+            "selected": "exact",
+            "title": "Select Unit",
+            "description": "Select the unit you want to use.",
+            "values": [
+              {
+                "title": "Exact",
+                "value": "exact"
+              },
+              {
+                "title": "Thousands",
+                "value": "thousands"
+              },
+              {
+                "title": "Millions",
+                "value": "millions"
+              }
+            ]
+          },
+          "transparency-slider": {
+            "type": "percentage-slider",
+            "default": 100,
+            "selected": 100,
+            "title": "Transparency Slider",
+            "description": "Adjust the transparency of the statistic items.",
           },
         }
       }
