@@ -42,9 +42,21 @@ export default {
     };
   },
   created() {
-    this.loadSettings();
-  },
+    const userSettings = localStorage.getItem('userSettings');
+    if (userSettings) {
+      this.loadSettings();
+    } else {
+      this.initializeSettings();
+      location.reload();
+
+    }  },
   methods: {
+    initializeSettings() {
+      Object.keys(this.config.settings).forEach(key => {
+        this.selected[key] = this.config.settings[key].default;
+      });
+      this.saveSettings();
+    },
     getComponentType(type) {
       const componentMap = {
         'select-one': 'SettingsSelectOne',
