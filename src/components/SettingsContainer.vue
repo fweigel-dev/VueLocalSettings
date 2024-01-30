@@ -12,13 +12,14 @@
 </template>
 
 <script>
-import { config } from '../../config/localSettingsConfig.js';
+import {config} from '../../config/localSettingsConfig.js';
 import SettingsSelectOne from './SettingsSelectOne.vue';
 import SettingsSelectMultiple from './SettingsSelectMultiple.vue';
 import SettingsSelectNone from './SettingsSelectNone.vue';
 import SettingsSectionHeader from "./SettingsSectionHeader.vue";
 import SettingsPercentageSlider from './SettingsPercentageSlider.vue';
 import SettingsColorPicker from "./SettingsColorPicker.vue";
+import '../VueLocalSettingsStyle.css';
 
 export default {
   name: 'SettingsContainer',

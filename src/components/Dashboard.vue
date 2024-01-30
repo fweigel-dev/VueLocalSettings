@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import '../VueLocalSettingsStyle.css';
-
 export default {
   components: {},
   data() {
