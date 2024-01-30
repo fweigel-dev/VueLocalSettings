@@ -62,18 +62,18 @@ export const config = {
             selected: "exact",
             title: "Select Unit",
             description: "Select the unit you want to use.",
-            "values": [
+            values: [
                 {
-                    "title": "Exact",
-                    "value": "exact"
+                    title: "Exact",
+                    value: "exact"
                 },
                 {
-                    "title": "Thousands",
-                    "value": "thousands"
+                    title: "Thousands",
+                    value: "thousands"
                 },
                 {
-                    "title": "Millions",
-                    "value": "millions"
+                    title: "Millions",
+                    value: "millions"
                 }
             ]
         },
