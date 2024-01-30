@@ -2,15 +2,18 @@
   <div class="dashboard" :style="{ backgroundColor: backgroundColor }">
     <div class="main-content">
       <div class="statistics">
-        <div class="statistic-item" v-if="isItemVisible('total-shipments')" :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
+        <div class="statistic-item" v-if="isItemVisible('total-shipments')"
+             :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
           <div class="statistic-value">{{ formatValue(totalShipments) }}</div>
           <div class="statistic-label">Total Shipments</div>
         </div>
-        <div class="statistic-item" v-if="isItemVisible('daily-sales')" :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
+        <div class="statistic-item" v-if="isItemVisible('daily-sales')"
+             :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
           <div class="statistic-value">{{ formatValue(dailySales) }}</div>
           <div class="statistic-label">Daily Sales</div>
         </div>
-        <div class="statistic-item" v-if="isItemVisible('completed-tasks')" :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
+        <div class="statistic-item" v-if="isItemVisible('completed-tasks')"
+             :style="{ backgroundColor: statisticItemColor, opacity: transparency / 100 }">
           <div class="statistic-value">{{ formatValue(completedTasks) }}</div>
           <div class="statistic-label">Completed Tasks</div>
         </div>
@@ -20,9 +23,10 @@
 </template>
 
 <script>
+import '../VueLocalSettingsStyle.css';
+
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       totalShipments: 2763215,
@@ -62,35 +66,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.dashboard {
-  display: flex;
-  color: #fff;
-}
-
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.statistics {
-  display: flex;
-  justify-content: space-around;
-}
-
-.statistic-item {
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.statistic-value {
-  font-size: 2em;
-}
-
-.statistic-label {
-  font-size: 1em;
-  opacity: 0.7;
-}
-</style>

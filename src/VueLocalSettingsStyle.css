@@ -1,0 +1,29 @@
+.dashboard {
+    display: flex;
+    color: #fff;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+}
+
+.statistic-item {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.statistic-value {
+    font-size: 2em;
+}
+
+.statistic-label {
+    font-size: 1em;
+    opacity: 0.7;
+}
