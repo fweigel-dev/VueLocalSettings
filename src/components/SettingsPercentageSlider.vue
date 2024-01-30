@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 border border-gray-200 rounded">
-    <span class="text-sm font-medium text-gray-700">{{ config.title }}</span>
-    <p class="text-xs text-gray-500">{{ config.description }}</p>
+  <div class="settings-item">
+    <span class="settings-title">{{ config.title }}</span>
+    <p class="settings-description">{{ config.description }}</p>
     <SettingsResetButton :config="config" :selectedValue="selectedValue"
                          :updateEvent="updateValue"></SettingsResetButton>
     <input
@@ -10,7 +10,7 @@
         max="100"
         v-model="selectedValue"
         @input="emitChange"
-        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+        class="settings-slider"
     >
     <div class="text-center">
       <span class="text-sm">{{ selectedValue }}%</span>

@@ -1,14 +1,14 @@
 <template>
-  <div class="p-4 border border-gray-200 rounded">
-    <span class="text-sm font-medium text-gray-700">{{ config.title }}</span>
-    <p class="text-xs text-gray-500">{{ config.description }}</p>
+  <div class="settings-item">
+    <span class="settings-title">{{ config.title }}</span>
+    <p class="settings-description">{{ config.description }}</p>
     <SettingsResetButton :config="config" :selectedValue="selectedValue"
                          :updateEvent="updateValue"></SettingsResetButton>
-    <div class="flex flex-wrap gap-2">
+    <div class="settings-spread-button">
       <button
           v-for="option in config.values"
           :key="option.value"
-          :class="['px-4 py-2 text-sm font-medium rounded-md shadow-sm', selectedValue.includes(option.value) ? 'bg-indigo-500 text-white' : 'bg-gray-300 text-gray-700']"
+          :class="['settings-setting-button', selectedValue.includes(option.value) ? 'settings-setting-selected' : 'settings-setting-unselected']"
           @click="toggleSelection(option.value)"
       >
         {{ option.title }}

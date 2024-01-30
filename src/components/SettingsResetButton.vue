@@ -1,5 +1,5 @@
 <template>
-  <button @click="resetToDefault" class="text-xs text-blue-500">Reset to Default</button>
+  <button @click="resetToDefault" class="settings-reset">Reset to Default</button>
 </template>
 
 <script>

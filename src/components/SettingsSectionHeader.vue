@@ -1,9 +1,7 @@
 <template>
-  <div class="p-4 border border-gray-200 rounded">
-    <div class="flex flex-col gap-2">
-      <span class="text-sm font-bold text-gray-700">{{ config.title }}</span>
-      <p class="text-xs text-gray-500">{{ config.description }}</p>
-    </div>
+  <div class="settings-item">
+    <span class="settings-title">{{ config.title }}</span>
+    <p class="settings-description">{{ config.description }}</p>
   </div>
 </template>
 
@@ -22,7 +20,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>
