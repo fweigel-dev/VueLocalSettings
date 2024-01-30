@@ -6,14 +6,15 @@
                          :updateEvent="updateValue"></SettingsResetButton>
     <input
         type="range"
-        min="0"
-        max="100"
+        :min="min"
+        :max="max"
         v-model="selectedValue"
         @input="emitChange"
         class="settings-slider"
+        :step="steps"
     >
     <div class="text-center">
-      <span class="text-sm">{{ selectedValue }}%</span>
+      <span class="text-sm">{{ selectedValue }}{{ unit }}</span>
     </div>
   </div>
 </template>
@@ -34,7 +35,27 @@ export default {
     keyName: {
       type: String,
       required: true,
-    }
+    },
+    min : {
+      type: Number,
+      default: 0,
+    },
+    max : {
+      type: Number,
+      default: 100,
+    },
+    steps : {
+      type: Number,
+      default: 1,
+    },
+    unit : {
+      type: String,
+      default: "%",
+    },
+    points : {
+      type: Array,
+      default: () => [],
+    },
   },
   methods: {
     emitChange() {
