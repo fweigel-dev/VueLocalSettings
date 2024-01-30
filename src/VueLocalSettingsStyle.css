@@ -27,3 +27,31 @@
     font-size: 1em;
     opacity: 0.7;
 }
+
+.settings-item {
+    padding: 1rem /* 16px */;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
+    border-radius: 0.25rem /* 4px */;
+}
+
+.settings-title {
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.settings-description {
+    font-size: 0.75rem /* 12px */;
+    color: #6b7280;
+}
+
+.settings-reset {
+    font-size: 0.75rem /* 12px */;
+    line-height: 1rem /* 16px */;
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+}

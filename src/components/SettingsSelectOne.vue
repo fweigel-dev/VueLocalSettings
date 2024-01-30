@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 border border-gray-200 rounded">
-    <span class="text-sm font-medium text-gray-700">{{ config.title }}</span>
-    <p class="text-xs text-gray-500">{{ config.description }}</p>
+  <div class="settings-item">
+    <span class="settings-title">{{ config.title }}</span>
+    <p class="settings-description">{{ config.description }}</p>
     <SettingsResetButton :config="config" :selectedValue="selectedValue"
                          :updateEvent="updateValue"></SettingsResetButton>
     <div class="flex gap-2">

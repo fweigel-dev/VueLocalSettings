@@ -1,8 +1,8 @@
 <template>
-  <div class="p-4 border border-gray-200 rounded">
+  <div class="settings-item">
     <div class="flex flex-col gap-2">
-      <span class="text-sm font-medium text-gray-700">{{ config.title }}</span>
-      <p class="text-xs text-gray-500">{{ config.description }}</p>
+      <span class="settings-title">{{ config.title }}</span>
+      <p class="settings-description">{{ config.description }}</p>
     </div>
   </div>
 </template>
