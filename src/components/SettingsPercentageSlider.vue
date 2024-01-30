@@ -10,7 +10,7 @@
         max="100"
         v-model="selectedValue"
         @input="emitChange"
-        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+        class="settings-slider"
     >
     <div class="text-center">
       <span class="text-sm">{{ selectedValue }}%</span>
