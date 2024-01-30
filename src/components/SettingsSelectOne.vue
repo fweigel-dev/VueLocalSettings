@@ -8,7 +8,7 @@
       <button
           v-for="option in config.values"
           :key="option.value"
-          :class="['px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm', option.value === selectedValue ? 'bg-indigo-500' : 'bg-gray-300']"
+          :class="['settings-setting-button', option.value === selectedValue ? 'settings-setting-selected' : 'settings-setting-unselected']"
           @click="selectOption(option.value)"
       >
         {{ option.title }}

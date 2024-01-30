@@ -61,3 +61,25 @@
     gap: 0.5rem /* 8px */;
     flex-wrap: wrap;
 }
+
+.settings-setting-selected {
+    --tw-bg-opacity: 1;
+    background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.settings-setting-unselected {
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.settings-setting-button {
+    padding: 0.5rem 1rem /* 8px, 16px */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    font-weight: 500;
+    border-radius: 0.375rem /* 6px */;
+}
