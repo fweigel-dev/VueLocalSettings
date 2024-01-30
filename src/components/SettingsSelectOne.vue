@@ -4,7 +4,7 @@
     <p class="settings-description">{{ config.description }}</p>
     <SettingsResetButton :config="config" :selectedValue="selectedValue"
                          :updateEvent="updateValue"></SettingsResetButton>
-    <div class="flex gap-2">
+    <div class="settings-spread-button">
       <button
           v-for="option in config.values"
           :key="option.value"
