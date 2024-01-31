@@ -4,15 +4,20 @@
     <p class="settings-description">{{ config.description }}</p>
     <SettingsResetButton :config="config" :selectedValue="selectedValue"
                          :updateEvent="updateValue"></SettingsResetButton>
-    <input
-        type="range"
-        :min="min"
-        :max="max"
-        v-model="selectedValue"
-        @input="emitChange"
-        class="settings-slider"
-        :step="steps"
-    >
+    <div class="slider-container">
+      <input
+          type="range"
+          :min="min"
+          :max="max"
+          v-model="selectedValue"
+          @input="emitChange"
+          class="settings-slider"
+          :step="steps"
+      >
+      <div class="slider-points">
+        <span v-for="point in points" :key="point" class="slider-point" :style="pointStyle(point)"></span>
+      </div>
+    </div>
     <div class="text-center">
       <span class="text-sm">{{ selectedValue }}{{ unit }}</span>
     </div>
@@ -61,6 +66,39 @@ export default {
     emitChange() {
       this.$emit('update', {value: this.selectedValue});
     },
+    pointStyle(point) {
+      const position = (point - this.min) / (this.max - this.min) * 100;
+      return {
+        left: `${position}%`,
+        position: 'absolute',
+        // Add more styles as needed
+      };
+    },
   },
 };
 </script>
+
+<style scoped>
+.slider-container {
+  position: relative;
+}
+
+.slider-points {
+  position: absolute;
+  width: 100%;
+  top: -10px; /* Adjust this value to match the slider's height */
+}
+
+.slider-point {
+  position: absolute;
+  height: 10px; /* Height of the point marker */
+  width: 2px; /* Width of the point marker */
+  background-color: #000; /* Color of the point marker */
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.settings-slider {
+  width: 100%;
+}
+</style>
