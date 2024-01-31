@@ -15,7 +15,9 @@
           :step="steps"
       >
       <div class="slider-points">
-        <span v-for="point in points" :key="point" class="slider-point" :style="pointStyle(point)"></span>
+        <span v-for="point in points" :key="point" class="slider-point"
+              v-show="point >= min && point <= max" :style="pointStyle(point)">
+        </span>
       </div>
     </div>
     <div class="text-center">
@@ -41,23 +43,23 @@ export default {
       type: String,
       required: true,
     },
-    min : {
+    min: {
       type: Number,
       default: 0,
     },
-    max : {
+    max: {
       type: Number,
       default: 100,
     },
-    steps : {
+    steps: {
       type: Number,
       default: 1,
     },
-    unit : {
+    unit: {
       type: String,
       default: "%",
     },
-    points : {
+    points: {
       type: Array,
       default: () => [],
     },
@@ -86,7 +88,7 @@ export default {
 .slider-points {
   position: absolute;
   width: 100%;
-  top: -10px; /* Adjust this value to match the slider's height */
+  top: 15px; /* Adjust this value to move all markers down */
 }
 
 .slider-point {
@@ -94,8 +96,8 @@ export default {
   height: 10px; /* Height of the point marker */
   width: 2px; /* Width of the point marker */
   background-color: #000; /* Color of the point marker */
-  top: 0;
-  transform: translateX(-50%);
+  top: 100%; /* Adjust this value to move individual markers down relative to the slider */
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .settings-slider {
