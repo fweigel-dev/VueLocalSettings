@@ -83,6 +83,11 @@ export const config = {
             selected: 100,
             title: "Transparency Slider",
             description: "Adjust the transparency of the statistic items.",
+            min: 0,
+            max: 100,
+            steps: 5,
+            unit: "%",
+            points: [0, 25, 50, 75, 100]
         },
     }
 };

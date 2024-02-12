@@ -5,6 +5,11 @@
           :is="getComponentType(setting.type)"
           :config="setting"
           :keyName="key"
+          :min="setting.min"
+          :max="setting.max"
+          :steps="setting.steps"
+          :unit="setting.unit"
+          :points="setting.points"
           @update="handleUpdate(key, $event)"
       ></component>
     </div>
