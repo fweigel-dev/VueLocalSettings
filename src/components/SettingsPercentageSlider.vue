@@ -18,6 +18,8 @@
         <span v-for="point in points" :key="point" class="slider-point"
               v-show="point >= min && point <= max" :style="pointStyle(point)">
         </span>
+        <span v-for="point in points" :key="point" class="slider-point-value"
+              v-show="point >= min && point <= max" :style="pointStyleValue(point)">{{ point }}{{ unit }}</span>
       </div>
     </div>
     <div class="text-center">
@@ -73,34 +75,15 @@ export default {
       return {
         left: `${position}%`,
         position: 'absolute',
-        // Add more styles as needed
       };
     },
-  },
+      pointStyleValue(point) {
+        const position = (point - this.min) / (this.max - this.min) * 100;
+        return {
+          left: `${position}%`,
+          position: 'absolute',
+        };
+      },
+    },
 };
 </script>
-
-<style scoped>
-.slider-container {
-  position: relative;
-}
-
-.slider-points {
-  position: absolute;
-  width: 100%;
-  top: 15px; /* Adjust this value to move all markers down */
-}
-
-.slider-point {
-  position: absolute;
-  height: 10px; /* Height of the point marker */
-  width: 2px; /* Width of the point marker */
-  background-color: #000; /* Color of the point marker */
-  top: 100%; /* Adjust this value to move individual markers down relative to the slider */
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.settings-slider {
-  width: 100%;
-}
-</style>
